@@ -1,9 +1,11 @@
-#ifdef __WIN32
+#ifdef _WIN32
 #include <windows.h>
 #endif
 #include <stdio.h>
+#ifndef _WIN32
 #include <unistd.h>
 #include <sys/time.h>
+#endif
 #include <fstream>
 #include <vector>
 #include <allegro5/allegro.h>
@@ -167,7 +169,7 @@ int main(int argc, char *argv[]) {
     // Check counter value for adding waiting time
     double delay = timer.GetCounter();
     if(delay < 20)
-#ifdef __WIN32
+#ifdef _WIN32
       Sleep(20 - delay);
 #else
       sleep(0.00002 - delay);

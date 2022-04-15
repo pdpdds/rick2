@@ -315,6 +315,7 @@ bool Character::ComputeCollisionBlocks(World* map) {
       break;
     }
   } 
+  return 0;
 }
 
 void Character::GetCollisionsByCoords(World* map, Colbox &mask_col, int left_up_x, int left_up_y, int right_down_x, int right_down_y) {

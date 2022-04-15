@@ -1,5 +1,6 @@
 #include "timer.h" // class's header file
 
+
 // class constructor
 Timer::Timer() {
   PCFreq = 0.0;
@@ -12,7 +13,7 @@ Timer::~Timer() {
 
 void Timer::StartCounter()
 {
-#ifdef __WIN32
+#ifdef _WIN32
   LARGE_INTEGER li;
   if(!QueryPerformanceFrequency(&li))
     printf("QueryPerformanceFrequency failed!\n");
@@ -30,7 +31,7 @@ void Timer::StartCounter()
 
 double Timer::GetCounter()
 {
-#ifdef __WIN32
+#ifdef _WIN32
   LARGE_INTEGER li;
   QueryPerformanceCounter(&li);
 

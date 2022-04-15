@@ -157,6 +157,7 @@ bool Enemy::CheckCollisionPlayer(World* map, Character* player) {
       player->SetKilled(map);
     }
   }
+  return 0;
 }
 
 EnemyIA* Enemy::GetEnemyIA() {
